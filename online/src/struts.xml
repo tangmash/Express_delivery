@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <constant name="struts.objectFactory" value="spring" /> 
+    <!--  用spring作为对象工厂来替代struts2来创建action-->
+   
+    <package name="pck" namespace="/goods" extends="struts-default">
+    	<!-- 此处的class的值为spring创建的action类,用类得简单名称进行注入 -->
+    	<action name="goods_*" class="GoodsAction" method="{1}">     	
+    		<result name="list">/index.jsp</result>
+    	</action>
+
+    </package>
+</struts>
